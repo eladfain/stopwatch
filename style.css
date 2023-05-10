@@ -32,3 +32,13 @@ h1{
     cursor: pointer;
     font-size: 24px;
 }
+
+#actions button:hover{
+    background-color: rgb(71, 235, 60);
+    color: rgb(128, 2, 245);
+}
+
+.active{
+    background-color: rgb(71, 235, 60) !important;
+    color: rgb(128, 2, 245) !important;
+}

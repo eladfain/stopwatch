@@ -1,19 +1,27 @@
 let currentTime=0,
 timerHandler;
 function start(){
-    timerHandler=setInterval(()=>{
-        currentTime++;
-        updateDisplay();
-    },1000)
+   setActive("start");
+   if(!timerHandler){
+        timerHandler=setInterval(()=>{
+            currentTime++;
+            updateDisplay();
+        },1000)
+   }
+   
 }
 
 function stop(){
+    setActive("stop");
     clearInterval(timerHandler);
+    timerHandler=0;
 }
 
 function reset(){
+    setActive("reset");
     if(timerHandler){
         clearInterval(timerHandler);
+        timerHandler=0;
     }
     currentTime=0;
     updateDisplay();
@@ -29,4 +37,9 @@ function updateDisplay(){
         minutes=`0${minutes}`
     }
     timespan.innerHTML=`${minutes}:${secondes}`
+}
+
+function setActive(element){
+    document.querySelector(".active")?.classList.remove("active");
+    document.getElementById(element).classList.add("active");
 }
