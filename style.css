@@ -2,7 +2,7 @@ main{
     width: 500px;
     height: 500px;
     background-color: rgb(225, 120, 22);
-    margin: 0;
+    margin: auto;
     color: aliceblue;
     font-size: 24px;
 }
